@@ -95,7 +95,7 @@
 						
 						
 						
-						<!-- <view style="color:#F79A0D;width: 100%;">本人承诺填写的信息真实有效，并对本次提交请假申请的信息真实性负责。</view> -->
+						<view style="color:#F79A0D;width: 100%;">本人承诺填写的信息真实有效，并对本次提交请假申请的信息真实性负责。</view>
 					</view>
 				</view>
 
@@ -159,12 +159,17 @@
 
 				</view>
 				
+				<view class="slide-item">
+					<image src="../../static/img/kf.png" style="width: 30rpx;height: 30rpx;"></image>
+					<view>智能客服</view>
+				</view>
+				
 				<!-- <view class="main-content-clear" @click="clear" v-if="leave.state == '正在休假中'">去销假</view> -->
 				<!-- <view class="main-content-applyLeave" v-if="leave.state == '正在休假中'">申请续假</view> -->
 				<view class="main-content-share-clear" v-if="leave.state == '已完成'">转发</view>
 				<view class="main-content-bottom-btn" v-if="leave.state == '正在休假中'">
 					<view>转发</view>
-					<!-- <view>申请续假</view> -->
+					<view>申请续假</view>
 					<view style="background-color: #3399FE;color: white;" @click="clear">去销假</view>
 				</view>
 			</view>
@@ -376,6 +381,29 @@
 </script>
 
 <style>
+	.slide-item{
+		width: 25rpx;
+		height: auto;
+		display: flex;
+		background-color: #3399FE;
+		color: white;
+		padding: 15rpx 10rpx;
+		flex-direction: column;
+		position: fixed;
+		right: 0;
+		bottom: 20%;
+		border-top-left-radius: 10rpx;
+		border-bottom-left-radius: 10rpx;
+		align-items: center;
+		letter-spacing: 0.4em;
+	}
+	
+	.slide-item view {
+	    /* 省略了其他样式设置 */
+		margin-top: 0.5em;
+	    writing-mode: vertical-lr;
+	}
+	
 	html{
 		
 	}
@@ -423,23 +451,25 @@
 	}
 	
 	.nav-left {
-		padding-top: 34px;
-		margin-left: 28rpx;
+		padding-top: 30px;
+		margin-left: 20rpx;
 	}
 	
 	.nav-left image {
-		width: 20px;
-		height: 20px;
+		width: 17px;
+		height: 17px;
 	}
 	
 	.nav-title {
-		font-weight: 450;
-		font-size: 33rpx;
-		letter-spacing: 1.5px;
-		position: absolute;
-		left: calc(50% - 80rpx);
-		top: 52rpx;
+	font-weight: 450;
+	font-size: 32rpx;
+	letter-spacing: 1.5px;
+	position: absolute;
+	left: 50%; /* 设置为父元素的50% */
+	top: 52rpx;
+	transform: translateX(-50%); /* 向左偏移自己宽度的50%，以达到居中效果 */
 	}
+	
 	
 	.nav-title image {
 		width: 48rpx;
@@ -448,13 +478,13 @@
 		top: 14rpx;
 		left: -4rpx;
 	}
-
+	
 	.nav-right {
 		position: absolute;
 		right: 36rpx;
-		top: 35px;
-		font-size: 33rpx;
-		color: #d55955;
+		top: 52rpx;
+		font-size: 26rpx;
+		color: #ff3d3d;
 	}
 	
 	.tab-box {
@@ -873,7 +903,7 @@
 	}
 	.main-content-bottom-btn view{
 		background-color: white;
-		width: 50%;
+		width: 33.3%;
 		box-sizing: border-box;
 		display: inline-block;
 		border-right: 1px solid #EBEBEB;

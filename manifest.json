@@ -1,9 +1,9 @@
 {
     "name" : "请假助手",
-    "appid" : "__UNI__D98FAF3",
+    "appid" : "__UNI__10443DD",
     "description" : "",
-    "versionName" : "1.1.0",
-    "versionCode" : "100",
+    "versionName" : "1.2.2",
+    "versionCode" : 102,
     "app-plus" : {
         /* 5+App特有相关 */
         "modules" : {},
@@ -37,7 +37,8 @@
                 ]
             },
             "ios" : {
-                "idfa" : false
+                "idfa" : false,
+                "dSYMs" : false
             },
             /* ios打包配置 */
             "sdkConfigs" : {
@@ -81,24 +82,24 @@
                 "iosStyle" : "default",
                 "androidStyle" : "default",
                 "android" : {
-                    "hdpi" : "/Users/zero/Desktop/item/leave-school/run-img/a 3.png",
-                    "xhdpi" : "/Users/zero/Desktop/item/leave-school/run-img/a 2.png",
-                    "xxhdpi" : "/Users/zero/Desktop/item/leave-school/run-img/a 1.png"
+                    "hdpi" : "run-img/a 3.png",
+                    "xhdpi" : "run-img/a 2.png",
+                    "xxhdpi" : "run-img/a 1.png"
                 },
                 "ios" : {
                     "iphone" : {
-                        "portrait-896h@3x" : "/Users/zero/Desktop/item/leave-school/run-img/1.png",
-                        "landscape-896h@3x" : "/Users/zero/Desktop/item/leave-school/run-img/1.png",
-                        "portrait-896h@2x" : "/Users/zero/Desktop/item/leave-school/run-img/1 2.png",
-                        "landscape-896h@2x" : "/Users/zero/Desktop/item/leave-school/run-img/1 2.png",
-                        "iphonex" : "/Users/zero/Desktop/item/leave-school/run-img/1 3.png",
-                        "iphonexl" : "/Users/zero/Desktop/item/leave-school/run-img/1 3.png",
-                        "retina55" : "/Users/zero/Desktop/item/leave-school/run-img/1 5.png",
-                        "retina55l" : "/Users/zero/Desktop/item/leave-school/run-img/1 5.png",
-                        "retina47l" : "/Users/zero/Desktop/item/leave-school/run-img/1 6.png",
-                        "retina47" : "/Users/zero/Desktop/item/leave-school/run-img/1 6.png",
-                        "retina40" : "/Users/zero/Desktop/item/leave-school/run-img/1 7.png",
-                        "retina40l" : "/Users/zero/Desktop/item/leave-school/run-img/1 7.png"
+                        "portrait-896h@3x" : "",
+                        "landscape-896h@3x" : "",
+                        "portrait-896h@2x" : "",
+                        "landscape-896h@2x" : "",
+                        "iphonex" : "",
+                        "iphonexl" : "",
+                        "retina55" : "",
+                        "retina55l" : "",
+                        "retina47l" : "",
+                        "retina47" : "",
+                        "retina40" : "",
+                        "retina40l" : ""
                     }
                 }
             }
@@ -113,5 +114,6 @@
     "h5" : {
         "title" : "请假助手",
         "domain" : "5c74f5af-3ae5-442c-b70c-fafe5e015a36.bspapp.com"
-    }
+    },
+    "locale" : "auto"
 }

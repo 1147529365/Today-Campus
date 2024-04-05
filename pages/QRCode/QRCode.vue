@@ -9,7 +9,7 @@
 				<image src="../../static/img/dt_store_back.png" @click="index1"></image>
 			</view>
 			<view class="nav-title">
-				<image src="../../static/img/dun.png"></image>请假详情
+				请假详情
 			</view>
 			<view class="nav-right">反馈</view>
 		</view>
@@ -321,24 +321,26 @@
 	}
 	
 	.nav-left {
-		padding-top: 34px;
-		margin-left: 28rpx;
+		padding-top: 30px;
+		margin-left: 20rpx;
 	}
 	
 	.nav-left image {
-		width: 20px;
-		height: 20px;
+		width: 17px;
+		height: 17px;
 	}
 	
-	.nav-title {
-		font-weight: 450;
-		font-size: 33rpx;
-		letter-spacing: 1.5px;
-		position: absolute;
-		left: calc(50% - 100rpx);
-		top: 52rpx;
+.nav-title {
+    font-weight: 450;
+    font-size: 32rpx;
+    letter-spacing: 1.5px;
+    position: absolute;
+    left: 50%; /* 设置为父元素的50% */
+    top: 52rpx;
+    transform: translateX(-50%); /* 向左偏移自己宽度的50%，以达到居中效果 */
 	}
-	
+
+
 	.nav-title image {
 		width: 48rpx;
 		height: 50rpx;
@@ -350,9 +352,9 @@
 	.nav-right {
 		position: absolute;
 		right: 36rpx;
-		top: 35px;
-		font-size: 33rpx;
-		color: #d55955;
+		top: 52rpx;
+		font-size: 26rpx;
+		color: #ff3d3d;
 	}
 	
 	.tab-box {
