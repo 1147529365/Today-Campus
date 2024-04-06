@@ -38,8 +38,8 @@
 
 ## 软件截图
 
-<img src="images/example1.jpg" alt="example1" style="zoom:20%;" />
+<img src="../images/example1.jpg" alt="example1" style="zoom:20%;" />
 
-<img src="images/example2.jpg" alt="example2" style="zoom:20%;" />
+<img src="../images/example2.jpg" alt="example2" style="zoom:20%;" />
 
-<img src="images/example3.jpg" alt="example3" style="zoom:20%;" />
+<img src="../images/example3.jpg" alt="example3" style="zoom:20%;" />
