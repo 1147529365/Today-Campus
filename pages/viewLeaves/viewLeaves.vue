@@ -90,6 +90,7 @@
 						<view>请假原因：</view><text>{{leave.reason}}</text><br>
 						<view style="main-content-info-left-file">发起位置：</view><text style="color: #2C8CF0;">{{leave.address}}</text><br>
 						<view>抄送人：</view><text>{{leave.cc}}</text><br>
+						<view v-if="leave.isLeave === '离校'">目的地：</view><text v-if="leave.isLeave === '离校'">{{leave.ToAddress}}</text><br>
 						<view v-if="leave.roomInfo">宿舍信息：</view><text v-if="leave.roomInfo">{{leave.roomInfo}}</text><br v-if="leave.roomInfo">
 						<view class="main-content-info-left-file" style="width: 100%;" v-if="leave.imgFile != ''"><text style="color: #9EA8B4;">附件：</text><image :src="leave.imgFile" @click="imgFileClick"></image></view><br v-if="leave.imgFile != ''">
 						

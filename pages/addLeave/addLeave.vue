@@ -13,9 +13,22 @@
 			是否显示当前时间
 		</switch>
 	<br>
+	<br>
+	<label>假条申请日期/时间<text class="subRed">*必填</text></label>
+	<view class="pickerView">
+		<picker mode="date" @change="bindApplicationDate" style="width: 42%;position: absolute;left: 0px;" :value="'2024-' + ApplicationDate">
+			<view style="line-height: 45px;color: gray;" v-if="ApplicationDate == ''">审批日期（年无效）</view>
+			<view style="line-height: 45px;" v-if="ApplicationDate != ''">{{ApplicationDate}}</view>
+		</picker>
+		<picker mode="time" @change="bindApplicationTime" style="width: 42%;position: absolute;right: 0px;" :value="ApplicationTime">
+			<view style="line-height: 45px;color: gray;" v-if="ApplicationTime == ''">审批时间</view>
+			<view style="line-height: 45px;" v-if="ApplicationTime != ''">{{ApplicationTime}}</view>
+		</picker>
+	</view>
+	
 		<label>开始日期/时间<text class="subRed">*必填</text></label>
 		<view class="pickerView">
-			<picker mode="date" @change="bindStartDate" style="width: 42%;position: absolute;left: 0px;" :value="'2020-' + startDate">
+			<picker mode="date" @change="bindStartDate" style="width: 42%;position: absolute;left: 0px;" :value="'2024-' + startDate">
 				<view style="line-height: 45px;color: gray;" v-if="startDate == ''">开始日期（年无效）</view>
 				<view style="line-height: 45px;" v-if="startDate != ''">{{startDate}}</view>
 			</picker>
@@ -42,6 +55,8 @@
 		<input placeholder="13555555555" v-model="phone" />
 		<label>请假原因<text class="subRed">*必填</text></label>
 		<input placeholder="(不少于10字)" v-model="reason" />
+		<label>目的地<text class="subRed">非必填</text></label>
+		<input placeholder="离校则显示" v-model="ToAddress" />
 		<label>抄送人<text class="subRed">*必填</text></label>
 		<input placeholder="无" v-model="cc" />
 		<label>宿舍信息<text class="subRed"></text></label>
@@ -119,12 +134,15 @@
 			return {
 				leaves: null,
 				name: '',
+				ApplicationDate: '',
+				ApplicationTime: '',
 				startDate: '',
 				startTime: '',
 				endDate: '',
 				endTime: '',
 				countDate: '',
 				reason: '',
+				ToAddress:'',
 				phone: '',
 				address: '',
 				cc: '',
@@ -160,6 +178,7 @@
 				this.type = leave.type;
 				this.reason = leave.reason;
 				this.phone = leave.phone;
+				this.ToAddress = leave.ToAddress;
 				this.address = leave.address;
 				this.cc = leave.cc;
 				this.oneCheck = leave.oneCheck;
@@ -176,7 +195,7 @@
 		methods: {
 			sub: function() {
 				var that = this;
-				if (this.name == '' || this.type == '' || this.startDate == '' || this.startTime == '' ||
+				if (this.name == '' || this.type == '' || this.ApplicationDate == '' || this.ApplicationTime == ''|| this.startDate == '' || this.startTime == '' ||
 					this.endDate == '' || this.endTime == '' || this.reason == '' || this.address == '' ||
 					this.cc == ''  || this.oneCheckTime == ''  ||
 					this.oneCheck == '' || this.countDate == '' || this.oneCheckDate == '' || this.oneCheckIdea == '') {
@@ -210,10 +229,12 @@
 				var date = new Date();
 				obj['name'] = this.name;
 				obj['type'] = this.type;
+				obj['applyDate'] = this.ApplicationDate + " " + this.ApplicationTime;
 				obj['startDate'] = this.startDate + " " + this.startTime;
 				obj['endDate'] = this.endDate + " " + this.endTime;
 				obj['countDate'] = this.countDate;
 				obj['reason'] = this.reason;
+				obj['ToAddress'] = this.ToAddress;
 				obj['phone'] = this.phone;
 				obj['address'] = this.address;
 				obj['cc'] = this.cc;
@@ -230,11 +251,11 @@
 				obj['threeCheckStatus'] = this.threeCheckStatus;
 				obj['threeCheckIdea'] = this.threeCheckIdea;
 				obj['state'] = this.state;
-				obj['applyDate'] = (Number(date.getMonth() + 1).toString().length <= 1 ? "0" + Number(date.getMonth() + 1) : Number(date.getMonth() +
-						1)) + "-" +
-					(date.getDate().toString().length <= 1 ? "0" + date.getDate() : date.getDate()) + " " +
-					(date.getHours().toString().length <= 1 ? "0" + date.getHours() : date.getHours()) + ":" +
-					(date.getMinutes().toString().length <= 1 ? "0" + date.getMinutes() : date.getMinutes());
+			// 	obj['applyDate'] = (Number(date.getMonth() + 1).toString().length <= 1 ? "0" + Number(date.getMonth() + 1) : Number(date.getMonth() +
+			// 			1)) + "-" +
+			// 		(date.getDate().toString().length <= 1 ? "0" + date.getDate() : date.getDate()) + " " +
+			// 		(date.getHours().toString().length <= 1 ? "0" + date.getHours() : date.getHours()) + ":" +
+			// 		(date.getMinutes().toString().length <= 1 ? "0" + date.getMinutes() : date.getMinutes());
 			
 				obj['imgFile'] = this.imgFile;
 				obj['isShowTime'] = this.isShowTime
@@ -259,6 +280,16 @@
 				})
 			},
 
+			//申请日期选择
+			bindApplicationDate: function(e) {
+				console.log(e.detail.value.substring(5, e.detail.value.length))
+				this.ApplicationDate = e.detail.value.substring(5, e.detail.value.length)
+			},
+			//申请时间选择
+			bindApplicationTime: function(e) {
+				console.log(e.detail.value)
+				this.ApplicationTime = e.detail.value;
+			},
 			//开始日期选择
 			bindStartDate: function(e) {
 				console.log(e.detail.value.substring(5, e.detail.value.length))
