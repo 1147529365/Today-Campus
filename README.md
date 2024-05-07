@@ -46,4 +46,4 @@
 
 QQ群：535990413
 
-<img src="https://li55.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/qrcode_1715050994327.jpg" width="300" height="200" alt="用户交流群">
+<img src="https://li55.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/qrcode_1715050994327.jpg" width="300" alt="用户交流群">
