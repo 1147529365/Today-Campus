@@ -44,4 +44,4 @@
 
 QQ群：373693960
 
-<img src="https://li55.oss-cn-hangzhou.aliyuncs.com/图片/qrcode_1715395621856.jpg" width="300" alt="用户交流群">
+<img src="https://li55.oss-cn-hangzhou.aliyuncs.com/%E5%9B%BE%E7%89%87/qrcode_1715395621856.jpg" width="300" alt="用户交流群">
