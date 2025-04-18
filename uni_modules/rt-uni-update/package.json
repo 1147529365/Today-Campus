@@ -1,0 +1,81 @@
+{
+  "id": "rt-uni-update",
+  "displayName": "app升级、整包更新和热更新组件 支持vue3 支持打开安卓、苹果应用市场，wgt静默更新",
+  "version": "1.5.2",
+  "description": "app升级、整包更新和热更新组件 支持vue3 支持打开安卓、苹果应用市场，支持wgt静默更新，无感知，支持覆盖原生tabar，原生导航栏",
+  "keywords": [
+    "整包更新",
+    "热更新",
+    "vue3",
+    "静默更新",
+    "app更新"
+],
+  "repository": "",
+"engines": {
+    "HBuilderX": "^3.4.8"
+  },
+"dcloudext": {
+    "sale": {
+      "regular": {
+        "price": "0.00"
+      },
+      "sourcecode": {
+        "price": "0.00"
+      }
+    },
+    "contact": {
+      "qq": ""
+    },
+    "declaration": {
+      "ads": "无",
+      "data": "无",
+      "permissions": "无"
+    },
+    "npmurl": "",
+    "type": "component-vue"
+  },
+  "uni_modules": {
+    "dependencies": [],
+    "encrypt": [],
+    "platforms": {
+      "cloud": {
+        "tcb": "y",
+        "aliyun": "y"
+      },
+      "client": {
+        "Vue": {
+          "vue2": "y",
+          "vue3": "y"
+        },
+        "App": {
+          "app-vue": "y",
+          "app-nvue": "y"
+        },
+        "H5-mobile": {
+          "Safari": "u",
+          "Android Browser": "u",
+          "微信浏览器(Android)": "u",
+          "QQ浏览器(Android)": "u"
+        },
+        "H5-pc": {
+          "Chrome": "u",
+          "IE": "u",
+          "Edge": "u",
+          "Firefox": "u",
+          "Safari": "u"
+        },
+        "小程序": {
+          "微信": "u",
+          "阿里": "u",
+          "百度": "u",
+          "字节跳动": "u",
+          "QQ": "u"
+        },
+        "快应用": {
+          "华为": "u",
+          "联盟": "u"
+        }
+      }
+    }
+  }
+}
